@@ -1,0 +1,638 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 80%;
+}
+
+footer {
+  width: 100%;
+  height: 100%;
+  padding: 58px 0 10px 0;
+  text-align: center;
+}
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 3px 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: 0.4s ease-in-out;
+  background-color: #fff;
+  z-index: 1000;
+  overflow: hidden;
+}
+.top-nav .menu {
+  list-style: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-height: 0;
+  transition: 0.4s ease-in-out;
+}
+.top-nav .menu li a {
+  display: inline-block;
+  min-width: 75px;
+  margin: 0.3em 0;
+  padding: 0 10px;
+  transition: 0.4s ease-in-out;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: 700;
+  font-family: "Amatic SC", sans-serif;
+}
+.top-nav .menu li a:link, .top-nav .menu li a:visited {
+  color: #4a223e;
+}
+.top-nav .menu li a:focus, .top-nav .menu li a:hover, .top-nav .menu li a:active {
+  transform: scale(1.1) rotate(-2deg);
+  color: #20232d;
+}
+.top-nav .logo {
+  display: inline-block;
+  width: 100px;
+}
+.top-nav .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  padding: 28px 20px;
+}
+.top-nav .menu-icon .navicon {
+  background: #4a223e;
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 1.625rem;
+  z-index: 3000;
+}
+.top-nav .menu-icon .navicon:before, .top-nav .menu-icon .navicon:after {
+  background: #4a223e;
+  content: "";
+  display: inline-block;
+  height: 100%;
+  position: absolute;
+  transition: 0.4s ease-in-out;
+  width: 100%;
+  z-index: 3000;
+}
+.top-nav .menu-icon .navicon:before {
+  top: 7px;
+}
+.top-nav .menu-icon .navicon:after {
+  top: -7px;
+}
+.top-nav .menu-btn {
+  display: none;
+}
+.top-nav .menu-btn:checked ~ .menu {
+  max-height: 300px;
+}
+.top-nav .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+.top-nav .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+.top-nav .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+.top-nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before, .top-nav .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media (min-width: 840px) {
+  .top-nav {
+    width: 80%;
+  }
+  .top-nav ul {
+    margin: auto;
+  }
+  .top-nav li {
+    margin: 0 10px;
+  }
+  .top-nav .menu {
+    width: auto;
+    max-height: none;
+    flex-direction: row;
+  }
+  .top-nav .menu li a {
+    font-size: 28px;
+    font-weight: 700;
+    color: #4a223e;
+  }
+  .top-nav .menu-icon {
+    display: none;
+  }
+}
+body {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Amatic SC", sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  height: 80vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.9)), url(../img/headerBackground.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto;
+}
+.header article {
+  margin: 50px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+.header article h1 {
+  font-size: 55px;
+  text-align: left;
+  margin: 25px 0 0 0;
+  color: #569f57;
+}
+.header article h2 {
+  font-size: 25px;
+  text-align: center;
+  color: #e1a2cd;
+}
+.header article h3 {
+  font-size: 23px;
+  color: #e1a2cd;
+  margin: 25px 0 5px 0;
+  text-align: center;
+}
+
+@media (min-width: 840px) {
+  .header {
+    background-image: url(../img/aroniaFrame.jpeg);
+    background-size: cover;
+    background-position: center;
+    width: 80%;
+    overflow: hidden;
+  }
+  .header article h1 {
+    font-size: 80px;
+    text-align: center;
+  }
+  .header article h2 {
+    font-size: 35px;
+    color: #4a223e;
+  }
+  .header article h3 {
+    color: #4a223e;
+  }
+}
+.about_us {
+  background-color: #e1a2cd;
+  width: 98%;
+  padding: 15px;
+  text-align: center;
+  margin: 0px auto;
+}
+.about_us h2 {
+  font-size: 35px;
+  color: #569f57;
+}
+.about_us h4 {
+  font-size: 29px;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 25px;
+  border: 1px solid #4a223e;
+  color: #4a223e;
+  border-radius: 12px 0 12px;
+  transition: 0.4s ease-in-out;
+}
+.btn:hover {
+  border-radius: 0 12px 0;
+  transition: 0.4s ease-in-out;
+  border: 1px solid lightgray;
+  background-color: #569f57;
+  color: #fff;
+}
+
+@media (min-width: 840px) {
+  .about_us {
+    width: 80%;
+  }
+}
+.our_products {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+  height: 100%;
+  background-color: #fff;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 25px;
+}
+.our_products h2 {
+  font-size: 35px;
+  color: #4a223e;
+  padding: 30px 0 35px 0;
+}
+.our_products .product__group {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.our_products .product__group .aronia {
+  width: 99%;
+  height: 300px;
+  display: flex;
+  align-items: end;
+}
+.our_products .product__group .juice {
+  background-image: url(../img/AroniaJuice.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.our_products .product__group .dry {
+  background-image: url(../img/dryAronia.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.our_products .product__group .liqueur {
+  background-image: url(../img/likerAronia.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.our_products .product__group .product__info {
+  height: 30%;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.9));
+  padding: 10px 0 15px 0;
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+.our_products .product__group .product__info h4 {
+  font-size: 22px;
+  color: #4a223e;
+  font-weight: 700;
+  padding-bottom: 5px;
+}
+.our_products .product__group .product__info .btn {
+  background-color: transparent;
+  color: #569f57;
+  border: 1px solid #569f57;
+  transition: 0.4s ease-in-out;
+}
+.our_products .product__group .product__info .btn:hover {
+  color: violet;
+  border: 1px solid #e1a2cd;
+}
+
+@media (min-width: 840px) {
+  .our_products {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+  .our_products .product__group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .our_products .product__group .aronia {
+    width: 26.6%;
+  }
+}
+.main_gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.center-marker {
+  height: 50px;
+  width: 100vw;
+  position: absolute;
+  top: calc(50% - 360px);
+  display: none;
+}
+.center-marker div {
+  height: 30px;
+  width: 1px;
+  margin: auto;
+  background: rgba(136, 136, 136, 0.1333333333);
+}
+
+.js-slideshow {
+  --offset: 1600px;
+  --overlap: 2;
+  --image-gap: 6;
+  --offset-time: 0.48s;
+  --thumb-border-radius: 0;
+  --thumb-size: 50;
+  --thumbs-width: 20000;
+  width: calc(100vw - 2px);
+  max-width: 880px;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.js-slideshow__slides-wrapper {
+  position: relative;
+  height: 0;
+  width: 100%;
+  padding-bottom: 50%;
+  overflow: hidden;
+}
+.js-slideshow__slides {
+  position: absolute;
+  height: 100%;
+  width: 40000px;
+  left: 50%;
+  transform: translate(calc(var(--offset) * -1), 0);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  transition: transform var(--offset-time) ease;
+}
+.js-slideshow__slides img {
+  height: 100%;
+  display: block;
+  margin-left: calc(var(--image-gap) * 0.5px);
+  margin-right: calc(var(--image-gap) * 0.5px);
+}
+.js-slideshow__thumbs-wrapper {
+  width: 100%;
+  height: calc(var(--thumb-size) * 1px + 18px);
+  margin-top: calc(var(--image-gap) * 1px);
+  position: relative;
+  display: block;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+.js-slideshow__thumbs {
+  width: calc(var(--thumbs-width) * 1px);
+  display: grid;
+  grid-auto-rows: calc(var(--thumb-size) * 1px);
+  grid-template-columns: repeat(auto-fit, calc(var(--thumb-size) * 1px));
+  grid-gap: calc(var(--image-gap) * 1px);
+}
+.js-slideshow__thumb-image {
+  margin: 0;
+  position: relative;
+}
+.js-slideshow__thumb-image img {
+  height: 100%;
+  width: 100%;
+  display: block;
+  border-radius: var(--thumb-border-radius);
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.js-slideshow__thumb-image--selected:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--thumb-border-radius);
+  box-shadow: inset 0 0 0 3px rgba(50, 200, 200, 0.8);
+}
+
+.gallery_info {
+  width: 98%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.gallery_info h2 {
+  padding: 15px 0 10px 0;
+  align-self: center;
+  font-size: 35px;
+}
+.gallery_info p {
+  font-size: 16px;
+}
+
+@media (min-width: 860px) {
+  .our_gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    height: 100%;
+  }
+  .js-slideshow {
+    width: 100%;
+  }
+  .js-slideshow__thumbs-wrapper {
+    display: block;
+    overflow: hidden;
+  }
+}
+.aronia_info {
+  width: 99%;
+  height: 100%;
+  padding: 20px 10px;
+  background-color: #e1a2cd;
+  margin: auto;
+}
+.aronia_info .about_aronia {
+  width: 100%;
+  height: 100%;
+}
+.aronia_info .about_aronia h2 {
+  text-transform: uppercase;
+}
+.aronia_info .about_aronia p {
+  font-size: 18px;
+  text-align: justify;
+}
+
+@media (min-width: 860px) {
+  .aronia_info {
+    width: 100%;
+    height: 100%;
+    background-color: #e1a2cd;
+  }
+  .aronia_info .about_aronia {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+  }
+  .aronia_info .about_aronia h2 {
+    text-transform: uppercase;
+  }
+  .aronia_info .about_aronia p {
+    font-size: 18px;
+    text-align: center;
+    padding: 0 0 18px 0;
+  }
+}
+.contact {
+  width: 99%;
+  margin: auto;
+  padding: 10px;
+}
+
+.contact_article {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.contact_article h3 {
+  font-size: 22px;
+  padding-bottom: 20px;
+}
+.contact_article a {
+  text-decoration: none;
+  color: #4a2b22;
+  padding: 5px 0;
+}
+
+.contact_container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.contact_container i {
+  font-size: 22px;
+  padding: 0 5px;
+}
+
+@media (min-width: 840px) {
+  .contact_article {
+    width: 80%;
+    margin: auto;
+  }
+  .contact_article h3 {
+    font-size: 28px;
+  }
+  .contact_article i {
+    font-size: 30px;
+    padding: 2px 3px;
+  }
+  .contact_container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+}
+.img_container img {
+  width: 99%;
+}
+
+.story {
+  padding-top: 100px;
+  width: 99%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e1a2cd;
+}
+.story h2 {
+  font-size: 35px;
+  color: #542c47;
+  padding: 0 0 15px 0;
+}
+.story .part_one_story {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 12px;
+}
+.story .part_one_story h3 {
+  font-size: 28px;
+  color: #4a223e;
+}
+.story .part_one_story p {
+  text-align: justify;
+  font-size: 16px;
+}
+.story .part_two_story {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 12px;
+}
+.story .part_two_story p {
+  text-align: justify;
+  font-size: 16px;
+}
+.story .part_two_story h3 {
+  font-size: 28px;
+  color: #4a223e;
+}
+
+@media (min-width: 860px) {
+  .img_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 18px 0;
+  }
+  .img_container img {
+    width: 300px;
+    height: 300px;
+  }
+  .top-nav {
+    width: 100%;
+  }
+  .story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 80px;
+  }
+  .story .story_container {
+    display: flex;
+    flex-direction: column;
+  }
+  .story .story_container hr {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,101 @@
+.our_products {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    height: 100%;
+    background-color: $white;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 25px;
+    h2 {
+        font-size: 35px;
+        color: $violet;
+        padding: 30px 0 35px 0;
+    }
+    .product__group {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        
+        .aronia {
+            width: 99%;
+            height: 300px;
+            display: flex;
+            align-items: end;
+            
+        }
+        .juice {
+            background-image: url(../img/AroniaJuice.webp);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+
+        }
+
+        .dry {
+            background-image: url(../img/dryAronia.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .liqueur {
+            background-image: url(../img/likerAronia.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .product__info {
+            height: 30%;
+            background:linear-gradient(rgba(255,255,255,.5),rgba(0,0,0,.9));
+            padding: 10px 0 15px 0;
+            width: 100%;
+            border-radius: 8px 8px 0 0;
+            h4 {
+                font-size: 22px;
+                color: $violet;
+                font-weight: 700;
+                padding-bottom: 5px;
+            }
+
+            .btn {
+                
+                background-color: transparent;
+                color: $green;
+                border:1px solid $green;
+                transition: $transition;
+                &:hover {
+                    color: violet;
+                    border: 1px solid $pink;
+                }
+
+
+            }
+        }
+    }
+    
+   
+    
+
+}
+@media (min-width: 840px) {
+    .our_products {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        .product__group {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            .aronia {
+                width: 26.6%;
+            }
+        }
+    }
+}
